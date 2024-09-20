@@ -38,6 +38,7 @@ public class UserDetailsImpl implements UserDetails {
         return user.getEmail(); // 이메일을 사용자 이름으로 사용
     }
 
+
     public String getEmail() {
         return user.getEmail();
     }

@@ -1,10 +1,8 @@
 package com.sparta.spring26.controller;
 
 import com.sparta.spring26.domain.user.entity.User;
-import com.sparta.spring26.dto.UserChangePassword;
 import com.sparta.spring26.dto.UserLogin;
 import com.sparta.spring26.dto.UserRequestDto;
-import com.sparta.spring26.dto.UserResponse;
 import com.sparta.spring26.enums.BaseResponseEnum;
 import com.sparta.spring26.security.UserDetailsImpl;
 import com.sparta.spring26.service.UserService;
@@ -35,22 +33,22 @@ public class UserController {
         return ResponseEntity.ok(userResponse);
     }
 
-    // 사용자 정보 조회
-    @GetMapping("/{userId}")
-    public ResponseEntity<UserResponse> getUser(@PathVariable long userId) {
-        return ResponseEntity.ok(userService.getUser(userId));
-    }
+//    사용자 정보 조회
+//    @GetMapping("/{userId}")
+//    public ResponseEntity<UserResponse> getUser(@PathVariable long userId) {
+//        return ResponseEntity.ok(userService.getUser(userId));
+//    }
 
 
     //비밀번호 변경
-    @PutMapping("/change-password")
-    public ResponseEntity<BaseResponseEnum> changePassword(
-                                                           @RequestBody UserChangePassword userChangePassword,
-                                                           @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        User loginUser = userDetails.getUser();
-        BaseResponseEnum response = userService.changePassword(loginUser.getId(), userChangePassword, loginUser);
-        return ResponseEntity.ok(response);
-    }
+//    @PutMapping("/change-password")
+//    public ResponseEntity<BaseResponseEnum> changePassword(
+//                                                           @RequestBody UserChangePassword userChangePassword,
+//                                                           @AuthenticationPrincipal UserDetailsImpl userDetails) {
+//        User loginUser = userDetails.getUser();
+//        BaseResponseEnum response = userService.changePassword(loginUser.getId(), userChangePassword, loginUser);
+//        return ResponseEntity.ok(response);
+//    }
 
 
     // 회원 탈퇴

@@ -25,4 +25,5 @@ spring:
         format_sql: true
         use_sql_comments: true
         dialect: org.hibernate.dialect.MySQL8Dialect
-
+jwt:
+  secret_key: ${JWT_SECRET_KEY}

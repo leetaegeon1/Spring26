@@ -1,13 +1,11 @@
 package com.sparta.spring26.domain.user.entity;
 
-import com.sparta.spring26.domain.restaurant.entity.Restaurant;
+//import com.sparta.spring26.domain.restaurant.entity.Restaurant;
+
 import com.sparta.spring26.global.config.PasswordEncoder;
 import com.sparta.spring26.global.entity.BaseTimeEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Entity
@@ -17,17 +15,11 @@ public class User extends BaseTimeEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 100)
-    private String name;
-
     @Column(nullable = false)
     private String email;
 
     @Column(nullable = false)
     private String password;
-
-    @Column(nullable = false, length = 30)
-    private String phone;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -70,6 +62,6 @@ public class User extends BaseTimeEntity {
     }
 
 
-    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
-    private List<Restaurant> restaurantList = new ArrayList<>();
+//    @OneToMany(mappedBy = "owner", cascade = CascadeType.ALL)
+//    private List<Restaurant> restaurantList = new ArrayList<>();
 }

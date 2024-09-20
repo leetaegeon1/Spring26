@@ -1,6 +1,5 @@
 package com.sparta.spring26.domain.restaurant.entity;
 
-import com.sparta.spring26.domain.menu.entity.Menu;
 import com.sparta.spring26.domain.order.entity.Order;
 import com.sparta.spring26.domain.user.entity.User;
 import jakarta.persistence.*;
@@ -40,6 +39,6 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> ordersList = new ArrayList<>();
 
-    @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Menu> menuList = new ArrayList<>();
+//    @OneToMany(mappedBy = "menu", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<Menu> menuList = new ArrayList<>();
 }
